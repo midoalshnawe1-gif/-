@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أناقة - متجر الملابس</title>
+    <meta name="description" content="متجر أناقة لبيع أحدث صيحات الموضة من الملابس الحريمي، الرجالي، والأطفالي. اطلب الآن عبر الواتساب.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">
+                <i class="fas fa-gem"></i> أناقة
+            </div>
+            <nav class="nav-links">
+                <a href="#hero">الرئيسية</a>
+                <a href="#women">حريمي</a>
+                <a href="#men">رجالي</a>
+                <a href="#kids">أطفالي</a>
+            </nav>
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>تألقي بأحدث صيحات الموضة</h1>
+            <p>تسوقِ الآن تشكيلتنا الواسعة من الملابس الحريمي، الرجالي، والأطفالي مع سهولة الطلب عبر الواتساب</p>
+            <a href="#women" class="btn btn-primary">اكتشف التشكيلة</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <!-- Women Section -->
+        <section id="women" class="category-section">
+            <div class="section-header">
+                <h2>قسم الحريمي</h2>
+                <div class="line"></div>
+            </div>
+            <div class="products-grid" id="women-grid">
+                <!-- Products dynamically injected -->
+            </div>
+        </section>
+
+        <!-- Men Section -->
+        <section id="men" class="category-section">
+            <div class="section-header">
+                <h2>قسم الرجالي</h2>
+                <div class="line"></div>
+            </div>
+            <div class="products-grid" id="men-grid">
+                <!-- Products dynamically injected -->
+            </div>
+        </section>
+
+        <!-- Kids Section -->
+        <section id="kids" class="category-section">
+            <div class="section-header">
+                <h2>قسم الأطفالي</h2>
+                <div class="line"></div>
+            </div>
+            <div class="products-grid" id="kids-grid">
+                <!-- Products dynamically injected -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-gem"></i> أناقة
+            </div>
+            <p>جميع الحقوق محفوظة &copy; 2026. متجر أناقة للتميز.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <button class="close-btn" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items dynamically injected -->
+        </div>
+        <div class="cart-footer">
+            <div class="total">
+                الإجمالي: <span id="cart-total">0</span> ج.م
+            </div>
+            <button class="btn btn-whatsapp" id="checkout-btn">
+                <i class="fab fa-whatsapp"></i> إرسال الطلب عبر الواتساب
+            </button>
+        </div>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">تمت الإضافة إلى السلة بنجاح!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
