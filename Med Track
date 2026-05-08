@@ -1,0 +1,1113 @@
+node_modules
+.env
+
+{
+  "name": "patient-management-app",
+  "version": "1.0.0",
+  "description": "A web application for managing patient follow-ups after surgery or hospitalization.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",node_modules
+.env
+
+{
+  "name": "patient-management-app",
+  "version": "1.0.0",
+  "description": "A web application for managing patient follow-ups after surgery or hospitalization.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "ejs": "^3.1.6",
+    "dotenv": "^8.2.0",
+    "body-parser": "^1.19.0",
+    "express-session": "^1.17.1",
+    "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
+# Patient Management App
+
+## Overview
+The Patient Management App is designed to facilitate the management of patient care post-surgery or hospitalization. It allows patients to book appointments with multiple healthcare providers in Alexandria, while providing doctors with tools to monitor and manage their patients effectively. The application also includes a developer panel for administrative tasks.
+
+## Features
+- **User Authentication**: Secure login and registration via email.
+- **Patient Management**: Patients can create, update, and retrieve their medical records and complaints.
+- **Doctor Dashboard**: Doctors can view and manage their patients, including accessing patient details.
+- **Developer Panel**: A dedicated interface for developers to manage the application and its users.
+- **Real-time Messaging**: A chat system that allows direct communication between doctors and patients, with a unique message thread for each patient.
+- **Scalability**: Designed to support over 10,000 users simultaneously.
+
+## Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/patient-management-app.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd patient-management-app
+   ```
+3. Install the dependencies:
+   ```
+   npm install
+   ```
+4. Configure the database settings in `config/database.js`.
+5. Start the application:
+   ```
+   npm start
+   ```
+
+## Usage
+- **Patient Registration**: Patients can register by providing their email, age, gender, and complaint.
+- **Doctor Access**: Doctors can log in to view their patient lists and manage patient records.
+- **Messaging**: Patients and doctors can communicate through the integrated chat system.
+
+## File Structure
+```
+patient-management-app
+├── src
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   ├── views
+│   └── app.js
+├── public
+│   ├── css
+│   └── js
+├── config
+└── README.md
+```
+
+## Contributing
+Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "ejs": "^3.1.6",
+    "dotenv": "^8.2.0",
+    "body-parser": "^1.19.0",
+    "express-session": "^1.17.1",
+    "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}
+# Patient Management App
+
+## Overview
+The Patient Management App is designed to facilitate the management of patient care post-surgery or hospitalization. It allows patients to book appointments with multiple healthcare providers in Alexandria, while providing doctors with tools to monitor and manage their patients effectively. The application also includes a developer panel for administrative tasks.
+
+## Features
+- **User Authentication**: Secure login and registration via email.
+- **Patient Management**: Patients can create, update, and retrieve their medical records and complaints.
+- **Doctor Dashboard**: Doctors can view and manage their patients, including accessing patient details.
+- **Developer Panel**: A dedicated interface for developers to manage the application and its users.
+- **Real-time Messaging**: A chat system that allows direct communication between doctors and patients, with a unique message thread for each patient.
+- **Scalability**: Designed to support over 10,000 users simultaneously.
+
+## Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/patient-management-app.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd patient-management-app
+   ```
+3. Install the dependencies:
+   ```
+   npm install
+   ```
+4. Configure the database settings in `config/database.js`.
+5. Start the application:
+   ```
+   npm start
+   ```
+
+## Usage
+- **Patient Registration**: Patients can register by providing their email, age, gender, and complaint.
+- **Doctor Access**: Doctors can log in to view their patient lists and manage patient records.
+- **Messaging**: Patients and doctors can communicate through the integrated chat system.
+
+## File Structure
+```
+patient-management-app
+├── src
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   ├── views
+│   └── app.js
+├── public<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Track - Developer Panel</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Med Track - Developer Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="/patients">Manage Patients</a></li>
+                <li><a href="/doctors">Manage Doctors</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Patient Management</h2>
+            <p>Here you can manage patient records, view complaints, and handle bookings.</p>
+            <!-- Additional functionality for managing patients can be added here -->
+        </section>
+        <section>
+            <h2>Doctor Management</h2>
+            <p>Manage doctor profiles and their patient lists.</p>
+            <!-- Additional functionality for managing doctors can be added here -->
+        </section>
+        <section>
+            <h2>System Messages</h2>
+            <p>View system messages and notifications.</p>
+            <!-- Additional functionality for viewing messages can be added here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Med Track</p>
+    </footer>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Med Track - Doctor Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Med Track - Doctor Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/patients">View Patients</a></li>
+                <li><a href="/messages">Messages</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="patient-list">
+            <h2>Patient List</h2>
+            <ul>
+                <% patients.forEach(function(patient) { %>
+                    <li>
+                        <a href="/patients/<%= patient.id %>">
+                            <%= patient.name %> - <%= patient.complaint %>
+                        </a>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+        <section id="messages">
+            <h2>Messages</h2>
+            <div id="chat">
+                <% messages.forEach(function(message) { %>
+                    <div class="message">
+                        <strong><%= message.sender %>:</strong> <%= message.content %>
+                    </div>
+                <% }); %>
+            </div>
+            <form id="message-form" action="/messages" method="POST">
+                <input type="text" name="content" placeholder="Type your message here..." required>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Med Track - Patient Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Med Track - Patient Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/patients/book">Book an Appointment</a></li>
+                <li><a href="/patients/records">View Medical Records</a></li>
+                <li><a href="/patients/messages">Messages</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="patient-info">
+            <h2>Your Information</h2>
+            <p>Name: <%= patient.name %></p>
+            <p>Age: <%= patient.age %></p>
+            <p>Gender: <%= patient.gender %></p>
+            <p>Complaint: <%= patient.complaint %></p>
+        </section>
+        <section id="appointments">
+            <h2>Your Appointments</h2>
+            <ul>
+                <% appointments.forEach(function(appointment) { %>
+                    <li>
+                        <p>Date: <%= appointment.date %></p>
+                        <p>Doctor: <%= appointment.doctorName %></p>
+                        <p>Status: <%= appointment.status %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+        <section id="chat">
+            <h2>Chat with Your Doctor</h2>
+            <div id="chat-window">
+                <!-- Chat messages will be loaded here -->
+            </div>
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-message">Send</button>
+        </section>
+    </main>
+    <script src="/js/chat.js"></script>
+</body>const express = require('express');
+const router = express.Router();
+const authController = require('../controllers/authController');
+
+// Route for user registration
+router.post('/register', authController.register);
+
+// Route for user login
+router.post('/login', authController.login);
+
+// Route for user logout
+router.post('/logout', authController.logout);
+
+module.exports = router;
+const express = require('express');
+const router = express.Router();
+const doctorController = require('../controllers/doctorController');
+const authMiddleware = require('../middleware/auth');
+
+// Route to get all patients for a specific doctor
+router.get('/:doctorId/patients', authMiddleware, doctorController.getPatientsForDoctor);
+
+// Route to get details of a specific patient
+router.get('/:doctorId/patients/:patientId', authMiddleware, doctorController.getPatientDetails);
+
+// Route to send a message to a patient
+router.post('/:doctorId/patients/:patientId/message', authMiddleware, doctorController.sendMessageToPatient);
+
+// Route to view messages for a specific patient
+router.get('/:doctorId/patients/:patientId/messages', authMiddleware, doctorController.getMessagesForPatient);
+
+module.exports = router;
+const express = require('express');
+const router = express.Router();
+const patientController = require('../controllers/patientController');
+const authMiddleware = require('../middleware/auth');
+
+// Route to create a new patient
+router.post('/', authMiddleware, patientController.createPatient);
+
+// Route to get all patients
+router.get('/', authMiddleware, patientController.getAllPatients);
+
+// Route to get a specific patient by ID
+router.get('/:id', authMiddleware, patientController.getPatientById);
+
+// Route to update a patient's information
+router.put('/:id', authMiddleware, patientController.updatePatient);
+
+// Route to delete a patient
+router.delete('/:id', authMiddleware, patientController.deletePatient);
+
+// Route to book an appointment for a patient
+router.post('/:id/book', authMiddleware, patientController.bookAppointment);
+const mongoose = require('mongoose');
+
+const messageSchema = new mongoose.Schema({
+    sender: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    recipient: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+const Message = mongoose.model('Message', messageSchema);
+
+module.exports = Message;
+const mongoose = require('mongoose');
+
+const patientSchema = new mongoose.Schema({
+    age: {
+        type: Number,
+        required: true
+    },
+    gender: {
+        type: String,
+        enum: ['Male', 'Female', 'Other'],
+        required: true
+    },
+    complaint: {
+        type: String,
+        required: true
+    },
+    medicalRecords: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'MedicalRecord'
+    }]
+}, { timestamps: true });
+
+const Patient = mongoose.model('Patient', patientSchema);
+
+module.exports = Patient;
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+
+const userSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    role: {
+        type: String,
+        enum: ['doctor', 'patient', 'developer'],
+        default: 'patient',
+    },
+}, { timestamps: true });
+
+userSchema.pre('save', async function(next) {
+    if (this.isModified('password')) {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
+    next();
+});
+
+userSchema.methods.comparePassword = async function(candidatePassword) {
+    return await bcrypt.compare(candidatePassword, this.password);
+};
+
+const User = mongoose.model('User', userSchema);
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+
+const authMiddleware = (req, res, next) => {
+    const token = req.headers['authorization'];
+
+    if (!token) {
+        return res.status(401).json({ message: 'No token provided' });
+    }
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(403).json({ message: 'Failed to authenticate token' });
+        }
+
+        req.userId = decoded.id;
+        next();
+    });
+};
+
+const isDoctor = (req, res, next) => {
+    User.findById(req.userId, (err, user) => {
+        if (err || !user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        if (user.role !== 'doctor') {
+            return res.status(403).json({ message: 'Require Doctor Role!' });
+        }
+
+        next();
+    });
+};
+
+const isPatient = (req, res, next) => {
+    User.findById(req.userId, (err, user) => {
+        if (err || !user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        if (user.role !== 'patient') {
+            return res.status(403).json({ message: 'Require Patient Role!' });
+        }
+
+        next();
+    });
+};
+
+module.exports = {
+    authMiddleware,
+    isDoctor,
+    isPatient
+};
+export default User;const User = require('../models/User');
+
+exports.register = async (req, res) => {
+    const { email, password, age, gender, complaint } = req.body;
+
+    try {
+        const newUser = new User({ email, password, age, gender, complaint });
+        await newUser.save();
+        res.status(201).json({ message: 'User registered successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error registering user', error });
+    }
+};
+
+exports.login = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+        if (!user || !(await user.comparePassword(password))) {
+            return res.status(401).json({ message: 'Invalid email or password' });
+        }
+
+        // Generate session token (implementation not shown)
+        const token = user.generateAuthToken();
+        res.status(200).json({ message: 'Login successful', token });
+    } catch (error) {
+        res.status(500).json({ message: 'Error logging in', error });
+    }
+};
+const Doctor = require('../models/User'); // Assuming doctors are stored in the User model
+const Patient = require('../models/Patient');
+
+// Get a list of patients for a specific doctor
+exports.getPatients = async (req, res) => {
+    try {
+        const doctorId = req.user.id; // Assuming user ID is stored in req.user
+        const patients = await Patient.find({ doctorId: doctorId });
+        res.status(200).json(patients);
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving patients', error });
+    }
+};
+
+// Get details of a specific patient
+exports.getPatientDetails = async (req, res) => {
+    try {
+        const patientId = req.params.id;
+        const patient = await Patient.findById(patientId);
+        if (!patient) {
+            return res.status(404).json({ message: 'Patient not found' });
+        }
+        res.status(200).json(patient);
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving patient details', error });
+    }
+};
+
+// Update patient information
+exports.updatePatient = async (req, res) => {
+    try {
+        const patientId = req.params.id;
+        const updatedPatient = await Patient.findByIdAndUpdate(patientId, req.body, { new: true });
+        if (!updatedPatient) {
+            return res.status(404).json({ message: 'Patient not found' });
+        }
+        res.status(200).json(updatedPatient);
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating patient', error });
+    }
+};
+
+// Send a message to a patient
+exports.sendMessageToPatient = async (req, res) => {
+    try {
+        const { patientId, content } = req.body;
+        const message = new Message({
+            sender: req.user.id,
+            recipient: patientId,
+            content: content,
+            timestamp: new Date()
+        });
+        await message.save();
+        res.status(201).json({ message: 'Message sent successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error sending message', error });
+    }
+};
+const Patient = require('../models/Patient');
+const Message = require('../models/Message');
+
+// Create a new patient record
+exports.createPatient = async (req, res) => {
+    try {
+        const { age, gender, complaint } = req.body;
+        const newPatient = new Patient({ age, gender, complaint });
+        await newPatient.save();
+        res.status(201).json({ message: 'Patient created successfully', patient: newPatient });
+    } catch (error) {
+        res.status(500).json({ message: 'Error creating patient', error });
+    }
+};
+
+// Update an existing patient record
+exports.updatePatient = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updates = req.body;
+        const updatedPatient = await Patient.findByIdAndUpdate(id, updates, { new: true });
+        if (!updatedPatient) {
+            return res.status(404).json({ message: 'Patient not found' });
+        }
+        res.json({ message: 'Patient updated successfully', patient: updatedPatient });
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating patient', error });
+    }
+};
+
+// Retrieve patient records
+exports.getPatients = async (req, res) => {
+    try {
+        const patients = await Patient.find();
+        res.json(patients);
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving patients', error });
+    }
+};
+
+// Handle patient bookings
+exports.bookAppointment = async (req, res) => {
+    try {
+        const { patientId, doctorId, date } = req.body;
+        const patient = await Patient.findById(patientId);
+        if (!patient) {
+            return res.status(404).json({ message: 'Patient not found' });
+        }
+        // Logic to book appointment (e.g., save to database)
+        res.json({ message: 'Appointment booked successfully', patientId, doctorId, date });
+    } catch (error) {
+        res.status(500).json({ message: 'Error booking appointment', error });
+    }
+};
+
+// Send a message between doctor and patient
+exports.sendMessage = async (req, res) => {
+    try {
+        const { senderId, recipientId, content } = req.body;
+        const newMessage = new Message({ sender: senderId, recipient: recipientId, content });
+        await newMessage.save();
+        res.status(201).json({ message: 'Message sent successfully', message: newMessage });
+    } catch (error) {
+        res.status(500).json({ message: 'Error sending message', error });
+    }
+};
+module.exports = router;
+</html>
+│   ├── cssconst socket = io(); // Initialize socket.io
+
+// Function to send a message
+function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const message = messageInput.value;
+    const recipientId = messageInput.getAttribute('data-recipient-id');
+
+    if (message.trim() !== '') {
+        socket.emit('sendMessage', {
+            content: message,
+            recipient: recipientId,
+            timestamp: new Date()
+        });
+        messageInput.value = ''; // Clear input after sending
+    }
+}
+
+// Function to display a message
+function displayMessage(message) {
+    const messagesContainer = document.getElementById('messagesContainer');
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.innerHTML = `<strong>${message.sender}</strong>: ${message.content} <span>${new Date(message.timestamp).toLocaleTimeString()}</span>`;
+    messagesContainer.appendChild(messageElement);
+}
+
+// Listen for incoming messages
+socket.on('receiveMessage', (message) => {
+    displayMessage(message);
+});
+
+// Event listener for the send button
+document.getElementById('sendButton').addEventListener('click', sendMessage);
+
+// Optional: Handle pressing Enter key to send message
+document.getElementById('messageInput').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.dashboard {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    display: inline-block;
+    font-size: 16px;
+    color: #ffffff;
+    background: #35424a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #45a049;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table th, .table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #35424a;
+    color: white;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 10px;
+    border: none;
+    background: #35424a;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {const mongoose = require('mongoose');
+
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/patient_management_app';
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect(dbURI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('Database connected successfully');
+    } catch (error) {
+        console.error('Database connection failed:', error);
+        process.exit(1);
+    }
+};
+
+module.exports = connectDB;
+    background: #45a049;
+}
+        sendMessage();
+    }
+});
+│   └── js
+├── config
+└── README.md
+```
+
+## Contributing
+Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file fo<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Track - Developer Panel</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Med Track - Developer Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="/patients">Manage Patients</a></li>
+                <li><a href="/doctors">Manage Doctors</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Patient Management</h2>
+            <p>Here you can manage patient records, view complaints, and handle bookings.</p>
+            <!-- Additional functionality for managing patients can be added here -->
+        </section>
+        <section>
+            <h2>Doctor Management</h2>
+            <p>Manage doctor profiles and their patient lists.</p>
+            <!-- Additional functionality for managing doctors can be added here -->
+        </section>
+        <section>
+            <h2>System Messages</h2>
+            <p>View system messages and notifications.</p>
+            <!-- Additional functionality for viewing messages can be added here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Med Track</p>
+    </footer>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Med Track - Doctor Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Med Track - Doctor Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/patients">View Patients</a></li>
+                <li><a href="/messages">Messages</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="patient-list">
+            <h2>Patient List</h2>
+            <ul>
+                <% patients.forEach(function(patient) { %>
+                    <li>
+                        <a href="/patients/<%= patient.id %>">
+                            <%= patient.name %> - <%= patient.complaint %>
+                        </a>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+        <section id="messages">
+            <h2>Messages</h2>
+            <div id="chat">
+                <% messages.forEach(function(message) { %>
+                    <div class="message">
+                        <strong><%= message.sender %>:</strong> <%= message.content %>
+                    </div>
+                <% }); %>
+            </div>
+            <form id="message-form" action="/messages" method="POST">
+                <input type="text" name="content" placeholder="Type your message here..." required>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Med Track - Patient Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Med Track - Patient Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/patients/book">Book an Appointment</a></li>
+                <li><a href="/patients/records">View Medical Records</a></li>
+                <li><a href="/patients/messages">Messages</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="patient-info">
+            <h2>Your Information</h2>
+            <p>Name: <%= patient.name %></p>
+            <p>Age: <%= patient.age %></p>
+            <p>Gender: <%= patient.gender %></p>
+            <p>Complaint: <%= patient.complaint %></p>
+        </section>
+        <section id="appointments">
+            <h2>Your Appointments</h2>
+            <ul>
+                <% appointments.forEach(function(appointment) { %>
+                    <li>
+                        <p>Date: <%= appointment.date %></p>
+                        <p>Doctor: <%= appointment.doctorName %></p>
+                        <p>Status: <%= appointment.status %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        </section>
+        <section id="chat">
+            <h2>Chat with Your Doctor</h2>
+            <div id="chat-window">
+                <!-- Chat messages will be loaded here -->
+            </div>
+            <input type="text" id="message-input" placeholder="Type your message here...">
+            <button id="send-message">Send</button>
+        </section>
+    </main>
+    <script src="/js/chat.js"></script>
+</body>
+</html>r details.const express = require('express');
+const router = express.Router();
+const authController = require('../controllers/authController');
+
+// Route for user registration
+router.post('/register', authController.register);
+
+// Route for user login
+router.post('/login', authController.login);
+
+// Route for user logout
+router.post('/logout', authController.logout);
+
+module.exports = router;
+const express = require('express');
+const router = express.Router();
+const doctorController = require('../controllers/doctorController');
+const authMiddleware = require('../middleware/auth');
+
+// Route to get all patients for a specific doctor
+router.get('/:doctorId/patients', authMiddleware, doctorController.getPatientsForDoctor);
+
+// Route to get details of a specific patient
+router.get('/:doctorId/patients/:patientId', authMiddleware, doctorController.getPatientDetails);
+
+// Route to send a message to a patient
+router.post('/:doctorId/patients/:patientId/message', authMiddleware, doctorController.sendMessageToPatient);
+
+// Route to view messages for a specific patient
+router.get('/:doctorId/patients/:patientId/messages', authMiddleware, doctorController.getMessagesForPatient);
+
+module.exports = router;
+const express = require('express');
+const router = express.Router();
+const patientController = require('../controllers/patientController');
+const authMiddleware = require('../middleware/auth');
+
+// Route to create a new patient
+router.post('/', authMiddleware, patientController.createPatient);
+
+// Route to get all patients
+router.get('/', authMiddleware, patientController.getAllPatients);
+
+// Route to get a specific patient by ID
+router.get('/:id', authMiddleware, patientController.getPatientById);
+
+// Route to update a patient's information
+router.put('/:id', authMiddleware, patientController.updatePatient);
+
+// Route to delete a patient
+router.delete('/:id', authMiddleware, patientController.deletePatient);
+
+// Route to book an appointment for a patient
+router.post('/:id/book', authMiddleware, patientController.bookAppointment);
+
+module.exports = router;const mongoose = require('mongoose');
+
+const messageSchema = new mongoose.Schema({
+    sender: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    recipient: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    content: {
+        type: String,
+        required: true
+    },
+    timestamp: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+const Message = mongoose.model('Message', messageSchema);
+
+module.exports = Message;
+const mongoose = require('mongoose');
+
+const patientSchema = new mongoose.Schema({
+    age: {
+        type: Number,
+        required: true
+    },
+    gender: {
+        type: String,
+        enum: ['Male', 'Female', 'Other'],
+        required: true
+    },
+    complaint: {
+        type: String,
+        required: true
+    },
+    medicalRecords: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'MedicalRecord'
+    }]
+}, { timestamps: true });
+
+const Patient = mongoose.model('Patient', patientSchema);
+
+module.exports = Patient;
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+
+const userSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    role: {
+        type: String,
+        enum: ['doctor', 'patient', 'developer'],
+        default: 'patient',
+    },
+}, { timestamps: true });
+
+userSchema.pre('save', async function(next) {
+    if (this.isModified('password')) {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
+    next();
+});
+
+userSchema.methods.comparePassword = async function(candidatePassword) {
+    return await bcrypt.compare(candidatePassword, this.password);
+};
+
+const User = mongoose.model('User', userSchema);
+
+export default User;
